@@ -12,8 +12,8 @@ if [ ! -z ${S2I_DEBUG} ]; then
 fi
 
 # Binary deployment is a single war
-if [ $(ls /opt/app/app/*.jar | wc -l) -eq 1 ]; then
-  mv /opt/app/app/*.jar /opt/app/openshift-app.jar
+if [ $(ls /opt/app/src/*.jar | wc -l) -eq 1 ]; then
+  mv /opt/app/src/*.jar /opt/app/openshift-app.jar
 else
   echo "Jar not found in /opt/app/src/"
   exit 1
